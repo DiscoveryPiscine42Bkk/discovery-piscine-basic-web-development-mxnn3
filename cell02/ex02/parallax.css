@@ -1,0 +1,58 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.parallax {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Fix for some browsers that don't support background-attachment: fixed on elements other than body */
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 800px) {
+    .parallax {
+        background-attachment: fixed;
+    }
+}
+
+.bg1 {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+}
+
+.bg2 {
+    background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80');
+}
+
+.center-message {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    font-size: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
+.black-block {
+    background: #111;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-message {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 3rem;
+}
