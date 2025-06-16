@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Background Color</title>
+    <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+    <button id="color-btn">Click me!</button>
+    <script>
+        function getRandomColor() {
+            return `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+        }
+        document.getElementById('color-btn').onclick = function() {
+            document.body.style.background = getRandomColor();
+        }
+    </script>
+</body>
+</html>
