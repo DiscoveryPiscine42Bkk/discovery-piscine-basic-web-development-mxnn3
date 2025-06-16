@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Random Background Color</title>
     <link rel="stylesheet" href="backgroound.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <button id="color-btn">Click me!</button>
@@ -11,9 +12,11 @@
         function getRandomColor() {
             return `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
         }
-        document.getElementById('color-btn').onclick = function() {
-            document.body.style.background = getRandomColor();
-        }
+        $(function() {
+            $('#color-btn').on('click', function() {
+                $('body').css('background', getRandomColor());
+            });
+        });
     </script>
 </body>
 </html>
