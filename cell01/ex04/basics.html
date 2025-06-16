@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basics</title>
+    <style>
+        body {
+            background: pink;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-title {
+            color: #fff;
+            font-size: 4rem;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+        .shop-row {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .shop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .shop img {
+            width: 200px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .shop a {
+            margin-top: 0.5rem;
+            color: #fff;
+            text-decoration: underline;
+            font-size: 1.1rem;
+        }
+        hr {
+            margin: 2.5rem 0 1.5rem 0;
+            border: none;
+            border-top: 2px solid #fff;
+            width: 90%;
+        }
+        .copyright {
+            text-align: right;
+            font-style: italic;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-title">Shop & Smile</div>
+        <div class="shop-row">
+            <div class="shop">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee">
+                <a href="https://shopee.com/" target="_blank">Visit Shopee</a>
+            </div>
+            <div class="shop">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Lazada_%282019%29.svg" alt="Lazada">
+                <a href="https://www.lazada.com/" target="_blank">Visit Lazada</a>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="copyright">
+        &copy; wil 2025
+    </div>
+</body>
+</html>
