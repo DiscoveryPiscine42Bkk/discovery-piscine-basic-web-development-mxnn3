@@ -1,0 +1,95 @@
+body {
+  background: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.sandwich-menu {
+  width: 260px;
+  margin: 40px auto 20px auto;
+  position: relative;
+}
+
+.sandwich-button {
+  width: 100%;
+  padding: 16px 0;
+  background: #e2001a;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+
+.sandwich-button:hover,
+.sandwich-button:focus {
+  background: #b80016;
+}
+
+.menu-content {
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+}
+
+.sandwich-menu:hover .menu-content,
+.sandwich-button:focus + .menu-content {
+  display: flex;
+}
+
+.layer {
+  padding: 14px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+}
+
+.bread {
+  background: #f9e4b7;
+  color: #b97a56;
+  font-weight: bold;
+}
+
+.ham {
+  background: #e89cae;
+  color: #a03a53;
+}
+
+.cheese {
+  background: #ffe066;
+  color: #bfa600;
+}
+
+.lettuce {
+  background: #b7e4c7;
+  color: #3a7a4d;
+}
+
+.layer:last-child {
+  border-bottom: none;
+}
+
+.question {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 24px 32px;
+  font-size: 1.1rem;
+  color: #333;
+}
