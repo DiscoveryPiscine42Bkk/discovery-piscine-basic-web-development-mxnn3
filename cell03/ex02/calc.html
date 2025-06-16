@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .calc-container {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        input[type="text"] {
+            width: 60px;
+            padding: 0.3rem;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            text-align: right;
+        }
+        select {
+            font-size: 1.1rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 0.3rem 1.2rem;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            border: none;
+            background: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <form class="calc-container" id="calc-form" autocomplete="off">
+        <input type="text" id="left" placeholder="0">
+        <select id="op">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right" placeholder="0">
+        <input type="submit" value="Try me!">
+    </form>
+    <script>
+        function isPositiveInt(val) {
+            return /^\d+$/.test(val);
+        }
+
+        function showResult(result) {
+            alert(result);
+            console.log(result);
+        }
+
+        document.getElementById('calc-form').onsubmit = function(e) {
+            e.preventDefault();
+            const left = document.getElementById('left').value.trim();
+            const right = document.getElementById('right').value.trim();
+            const op = document.getElementById('op').value;
+
+            if (!isPositiveInt(left) || !isPositiveInt(right)) {
+                alert('Error :(');
+                return;
+            }
+
+            const a = parseInt(left, 10);
+            const b = parseInt(right, 10);
+
+            if ((op === '/' || op === '%') && b === 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+
+            let result;
+            switch(op) {
+                case '+': result = a + b; break;
+                case '-': result = a - b; break;
+                case '*': result = a * b; break;
+                case '/': result = a / b; break;
+                case '%': result = a % b; break;
+            }
+            showResult(result);
+        };
+
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>
