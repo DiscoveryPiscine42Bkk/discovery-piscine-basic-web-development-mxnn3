@@ -1,0 +1,167 @@
+/* ---- โครงสร้างหลักของหน้าเว็บ ---- */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #18191a; /* สีพื้นหลังดำ */
+    /* ลวดลายพื้นหลัง: เส้นทแยงมุมจางๆ + gradient */
+    background-image:
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 8px),
+        linear-gradient(120deg, #232526 0%, #18191a 100%);
+}
+
+/* ---- เพิ่มจุด noise บนพื้นหลัง ---- */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.15;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+}
+
+/* ---- ส่วน parallax (พื้นหลังโปร่งใส) ---- */
+.parallax {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+/* parallax ติดพื้นหลังเมื่อจอกว้าง */
+@media (min-width: 800px) {
+    .parallax { background-attachment: fixed; }
+}
+
+/* ---- กล่องข้อความกลาง ---- */
+.center-message {
+    font-family: 'Sarabun', Arial, sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    background: rgba(94,94,94,0.85);
+    padding: 18px 32px;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    text-align: center;
+    margin-top: 0;
+}
+.center-message .faculty,
+.center-message .major {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* ---- รูปโปรไฟล์ ---- */
+.img-row img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    margin-bottom: 24px;
+}
+.img-row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.img-row img:first-child {
+    width: 300px;
+    height: auto;
+}
+
+/* ---- กล่องเนื้อหา (หลักสูตร/อาชีพ) ---- */
+.black-block {
+    background: #111;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.block-message {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 3rem;
+}
+.block-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.course-section, .side-info {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(80,120,200,0.07);
+    padding: 28px 22px 20px 22px;
+    margin: 0;
+    flex: 1 1 340px;
+    min-width: 270px;
+    max-width: 480px;
+}
+.side-info {
+    background: #f7f8fa;
+    border: 1.5px solid #e3e7f0;
+}
+/* ปรับ layout สำหรับจอเล็ก */
+@media (max-width: 900px) {
+    .block-flex { flex-direction: column; gap: 24px; }
+    .course-section, .side-info { max-width: 100%; }
+}
+
+/* ---- ส่วนข้อมูลติดต่อ ---- */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 0 44px 0;
+    background: #fff;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+.contact-title {
+    font-family: 'Prompt', 'Sarabun', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3949ab;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+}
+.contact-icons {
+    display: flex;
+    gap: 48px;
+}
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(80,120,200,0.10);
+    width: 68px;
+    height: 68px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+}
+.contact-icon:hover {
+    transform: translateY(-6px) scale(1.12);
+    box-shadow: 0 6px 24px rgba(80,120,200,0.18);
+    background: #f7f8fa;
+}
